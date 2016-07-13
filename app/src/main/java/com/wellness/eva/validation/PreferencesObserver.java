@@ -9,4 +9,5 @@ public abstract class PreferencesObserver {
     // Subject of Observer object
     protected UserPreferences userPreferences;
     public abstract void update();
+
 }
