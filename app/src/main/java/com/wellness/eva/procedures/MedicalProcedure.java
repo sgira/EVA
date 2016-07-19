@@ -15,6 +15,7 @@ public class MedicalProcedure
     private boolean needsFeedback;
 
     public ArrayList<String> getInstructions() {
+
         return instructions;
     }
 
@@ -44,7 +45,7 @@ public class MedicalProcedure
      * to measure and collect feedback while user operation
      * @return
      */
-    public boolean isNeedsFeedback() {
+    public boolean NeedsFeedback() {
         return needsFeedback;
     }
 

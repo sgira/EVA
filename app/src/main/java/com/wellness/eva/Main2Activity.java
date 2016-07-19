@@ -35,7 +35,7 @@ public class Main2Activity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         mSwitch = (Switch) findViewById(R.id.switchMaps);
 
