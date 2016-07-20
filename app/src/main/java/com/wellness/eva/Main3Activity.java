@@ -74,7 +74,7 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent drowningIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent drowningIntent = new Intent(Main3Activity.this, Main7Activity.class);
 
                 startActivity(drowningIntent);
 

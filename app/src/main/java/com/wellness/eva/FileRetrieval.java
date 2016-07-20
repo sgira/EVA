@@ -121,6 +121,25 @@ public class FileRetrieval {
             medicalProcedure.setInstructions(instructions);
         }
 
+        if (emergencyType.equals("drowning")) {
+
+            ArrayList<String> instructions = new ArrayList<>();
+
+            instructions.add("1. Notify a lifeguard, if one is close. If not, ask someone to call 911.\n\n");
+            instructions.add("2. If you are alone, follow the steps below.\n\n");
+            instructions.add("3. Take the person out of the water\n\n");
+            instructions.add("4. Place your ear next to the person's mouth and nose to" +
+                    "check for breathing.\n\n");
+            instructions.add("5. Look to see if the person's chest is moving.\n\n");
+            instructions.add("6. If the person is not breathing, check the person's pulse " +
+                    "for 10 seconds.\n\n");
+            instructions.add("7. If there is no pulse, start CPR.\n\n");
+            instructions.add("8. Repeat if person is still not breathing.\n\n");
+
+            medicalProcedure.setInstructions(instructions);
+            medicalProcedure.setNeedsFeedback(true);
+        }
+
 
 
 
