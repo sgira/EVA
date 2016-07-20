@@ -5,6 +5,7 @@ package com.wellness.eva.messaging;
  */
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -31,7 +32,7 @@ import com.wellness.eva.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class GMapsFollowLocationActivity extends ActionBarActivity implements
+public class GMapsFollowLocationActivity extends Activity implements
         OnMapReadyCallback {
 
     // =========================================================================
@@ -74,9 +75,9 @@ public class GMapsFollowLocationActivity extends ActionBarActivity implements
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayShowHomeEnabled(false);
+        //actionBar.setDisplayShowTitleEnabled(false);
     }
 
     @Override
@@ -93,7 +94,8 @@ public class GMapsFollowLocationActivity extends ActionBarActivity implements
     @Override
     public void onMapReady(GoogleMap map) {
         mGoogleMap = map;
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
