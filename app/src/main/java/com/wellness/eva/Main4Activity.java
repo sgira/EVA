@@ -20,13 +20,13 @@ public class Main4Activity extends Activity {
 
         heartAttackProcedure = file.retrieveMedicalEmergency(emergencyType);
 
-        heartAttackProcedure.getInstructions();
 
         TextView myTextView = new TextView(this);
 
         myTextView = (TextView) findViewById(R.id.textView8);
 
         for(int i = 0; i < heartAttackProcedure.getInstructions().size(); i++) {
+
             myTextView.append(heartAttackProcedure.getInstructions().get(i));
         }
     }

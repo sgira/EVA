@@ -19,14 +19,16 @@ public class MainActivity extends Activity
 {
     private MedicalEmergency medicalEmergency;
 
-    public ImageButton redCrossImageButton;
-    public ImageButton sosImageButton;
+    private ImageButton redCrossImageButton;
+    private ImageButton sosImageButton;
+    private ImageButton settingsImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Setting redCrossImageButton OnClick listener
         redCrossImageButton = (ImageButton) findViewById(R.id.imageButton);
 
         redCrossImageButton.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +41,9 @@ public class MainActivity extends Activity
                 //Toast.makeText(MainActivity.this, "it works", Toast.LENGTH_LONG).show();
             }
         });
+
+        // Setting settingsImageButton OnClick listener
+        settingsImageButton = (ImageButton) findViewById(R.id.imageButton8);
     }
 
 

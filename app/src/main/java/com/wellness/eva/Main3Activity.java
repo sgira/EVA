@@ -34,7 +34,6 @@ public class Main3Activity extends Activity {
         });
 
         heartAttackImageButton = (ImageButton) findViewById(R.id.imageButton3);
-
         heartAttackImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +41,42 @@ public class Main3Activity extends Activity {
                 Intent heartAttackIntent = new Intent(Main3Activity.this, Main4Activity.class);
 
                 startActivity(heartAttackIntent);
+
+            }
+        });
+
+        chokingImageButton = (ImageButton) findViewById(R.id.imageButton4);
+        chokingImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent chokingIntent = new Intent(Main3Activity.this, Main5Activity.class);
+
+                startActivity(chokingIntent);
+
+            }
+        });
+
+        burningImageButton = (ImageButton) findViewById(R.id.imageButton5);
+        burningImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent burningIntent = new Intent(Main3Activity.this, Main6Activity.class);
+
+                startActivity(burningIntent);
+
+            }
+        });
+
+        drowningImageButton = (ImageButton) findViewById(R.id.imageButton6);
+        drowningImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent drowningIntent = new Intent(Main3Activity.this, Main4Activity.class);
+
+                startActivity(drowningIntent);
 
             }
         });

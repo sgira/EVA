@@ -86,11 +86,11 @@
         android:layout_height="wrap_content"
         android:text="Emergency Situations"
         android:id="@+id/textView7"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textColor="#2958cf"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:layout_width="20dp"

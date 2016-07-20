@@ -58,4 +58,12 @@
         android:layout_alignEnd="@+id/imageButton2"
         android:layout_marginTop="0dp" />
 
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageButton8"
+        android:src="@drawable/settings"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
+
 </RelativeLayout>

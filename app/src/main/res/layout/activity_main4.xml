@@ -14,10 +14,23 @@
     android:textAlignment="center"
     android:touchscreenBlocksFocus="false">
 
+    <Button
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:text="Begin CPR"
+        android:id="@+id/button"
+        android:layout_gravity="bottom"
+        android:background="#cbddff"
+        android:textSize="40dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="20dp" />
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView" >
+        android:layout_width="351dp"
+        android:layout_height="409dp"
+        android:id="@+id/scrollView"
+        android:layout_marginLeft="-330dp">
 
         <TextView
             android:layout_width="wrap_content"
