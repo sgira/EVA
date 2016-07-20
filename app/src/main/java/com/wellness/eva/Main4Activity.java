@@ -1,6 +1,7 @@
 package com.wellness.eva;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -14,6 +15,10 @@ public class Main4Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+
+        // Get Channel Name
+        Intent intent = getIntent();
+        emergencyType = intent.getExtras().getString("emergency_situation");
 
         FileRetrieval file = new FileRetrieval();
         MedicalProcedure heartAttackProcedure = new MedicalProcedure();

@@ -40,7 +40,7 @@ public class Main3Activity extends Activity {
 
                 Intent heartAttackIntent = new Intent(Main3Activity.this, Main4Activity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("emergency","heart_attack");
+                bundle.putString("emergency_situation","heart_attack");
                 startActivity(heartAttackIntent,bundle);
 
             }
