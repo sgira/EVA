@@ -1,32 +1,35 @@
-<LinearLayout android:padding="30dp" android:orientation="vertical" android:gravity="center" android:background="@color/white" android:layout_height="fill_parent" android:layout_width="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout android:padding="20dp" android:orientation="vertical" android:gravity="center" android:background="@color/white" android:layout_height="fill_parent" android:layout_width="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button android:padding="10dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/light_blue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/follow_button"
+        android:textAllCaps="false"
+        android:onClick="followLocation"
+        android:layout_gravity="center"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button3" />
 
 
-    -<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent">
+    <Button android:padding="10dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@color/light_blue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/share_button"
+        android:textAllCaps="false"
+        android:onClick="shareLocation"
+        android:layout_gravity="center"
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/button2"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/button3" />
 
-    <TextView android:gravity="end" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/black" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/channel_name" android:layout_weight="1" android:id="@+id/textView1"/>
-
-
-    -<EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/red" android:layout_weight="4" android:id="@+id/channelEditText" android:inputType="text" android:hint="@string/channel_hint">
-
-    <requestFocus/>
-
-</EditText>
-
-</LinearLayout>
-
-    <Button android:padding="40dp" android:gravity="center" android:background="@color/white" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/light_blue" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/share_button" android:textAllCaps="false" android:onClick="shareLocation" android:layout_gravity="center" style="?android:attr/borderlessButtonStyle"/>
-
-    <Button android:padding="40dp" android:gravity="center" android:background="@color/white" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/light_blue" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/follow_button" android:textAllCaps="false" android:onClick="followLocation" android:layout_gravity="center" style="?android:attr/borderlessButtonStyle"/>
-
-
-    -<LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent">
-
-    <TextView android:gravity="end" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/light_blue" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/gmaps" android:id="@+id/textView2"/>
-
-    <Switch android:gravity="center" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:id="@+id/switchMaps" android:textOn="" android:textOff=""/>
-
-    <TextView android:padding="10dp" android:gravity="center" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/light_blue" android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/mapbox" android:layout_weight="2" android:id="@+id/textView3"/>
-
-</LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

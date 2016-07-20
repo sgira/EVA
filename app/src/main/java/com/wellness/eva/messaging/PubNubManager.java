@@ -20,7 +20,8 @@ public class PubNubManager {
 
     public static Pubnub startPubnub() {
         Log.d(TAG, "Initializing PubNub");
-        return new Pubnub("demo", "demo");
+        return new Pubnub("pub-c-620239cf-ebd7-4be6-9b63-46553885d0ac",
+                "sub-c-4914b25e-4e0b-11e6-9c7c-0619f8945a4f");
     }
 
     public static void subscribe(Pubnub mPubnub, String channelName, Callback subscribeCallback) {

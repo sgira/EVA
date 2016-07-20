@@ -15,15 +15,6 @@ allprojects {
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:4.1.0@aar'){
-        transitive=true
-    }
-}
 
 android {
     compileSdkVersion 23
@@ -35,6 +26,9 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        // Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -50,4 +44,5 @@ dependencies {
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
     compile 'com.pubnub:pubnub-android:3.7.10'
+    compile 'com.android.support:multidex:1.0.0'
 }

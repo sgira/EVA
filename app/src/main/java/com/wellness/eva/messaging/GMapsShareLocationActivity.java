@@ -1,6 +1,8 @@
 package com.wellness.eva.messaging;
 
 import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -29,16 +31,16 @@ import com.wellness.eva.R;
 /**
  * Created by sindyg on 7/15/2016.
  */
-public class GMapsShareLocationActivity extends ActionBarActivity implements
+public class GMapsShareLocationActivity implements
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, LocationListener {
 
     // =============================================================================================
     // Properties
     // =============================================================================================
-
+    private final String channelName =  "EVA_Broadcast";
     private static final String TAG = "Tracker - GMaps Share";
     private boolean mRequestingLocationUpdates = false;
-    private MenuItem mShareButton;
+    private Context context;
 
     // Google API - Locations
     private GoogleApiClient mGoogleApiClient;
@@ -50,46 +52,23 @@ public class GMapsShareLocationActivity extends ActionBarActivity implements
 
     // PubNub
     private Pubnub mPubnub;
-    private String channelName;
 
     // =============================================================================================
-    // Activity Life Cycle
+    // Class constructor
     // =============================================================================================
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gmaps_view);
-
-        // Get Channel Name
-        Intent intent = getIntent();
-        channelName = intent.getExtras().getString("channel");
-        Log.d(TAG, "Passed Channel Name: " + channelName);
-
+    public GMapsShareLocationActivity(Context context)
+    {
+        this.context = context;
         // Start Google Client
         this.buildGoogleApiClient();
-
-        // Set up View: Map & Action Bar
-        MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
 
         // Start PubNub
         mPubnub = PubNubManager.startPubnub();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.share, menu);
-        mShareButton = menu.findItem(R.id.share_locations);
-        return true;
-    }
-
     private synchronized void buildGoogleApiClient() {
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
+        mGoogleApiClient = new GoogleApiClient.Builder(context)
                 .addConnectionCallbacks(this).addApi(LocationServices.API)
                 .build();
     }
@@ -101,7 +80,10 @@ public class GMapsShareLocationActivity extends ActionBarActivity implements
     @Override
     public void onMapReady(GoogleMap map) {
         mGoogleMap = map;
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -124,7 +106,10 @@ public class GMapsShareLocationActivity extends ActionBarActivity implements
         Log.d(TAG, "Connected to Google API for Location Management");
         if (mRequestingLocationUpdates) {
             LocationRequest mLocationRequest = createLocationRequest();
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
                 // here to request the missing permissions, and then overriding
@@ -166,31 +151,6 @@ public class GMapsShareLocationActivity extends ActionBarActivity implements
         mLocationRequest.setFastestInterval(5000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         return mLocationRequest;
-    }
-
-    // =============================================================================================
-    // Button CallBacks
-    // =============================================================================================
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.share_locations:
-                Log.d(TAG, "'Share Your Location' Button Pressed");
-                mRequestingLocationUpdates = !mRequestingLocationUpdates;
-                if (mRequestingLocationUpdates) {
-                    startSharingLocation();
-                    mShareButton.setTitle("Stop Sharing Your Location");
-                }
-                if (!mRequestingLocationUpdates) {
-                    stopSharingLocation();
-                    mShareButton.setTitle("Start Sharing Your Location");
-                }
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     public void startSharingLocation() {
