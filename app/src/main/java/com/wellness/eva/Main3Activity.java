@@ -39,8 +39,9 @@ public class Main3Activity extends Activity {
             public void onClick(View v) {
 
                 Intent heartAttackIntent = new Intent(Main3Activity.this, Main4Activity.class);
-
-                startActivity(heartAttackIntent);
+                Bundle bundle = new Bundle();
+                bundle.putString("emergency","heart_attack");
+                startActivity(heartAttackIntent,bundle);
 
             }
         });
