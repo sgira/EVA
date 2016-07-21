@@ -11,7 +11,7 @@
     <string name="mapbox">MapBox</string>
     <string name="channel_hint">Please enter a channel</string>
     <string name="gmaps_share_location_activity">Share Location Activity</string>
-    <string name="gmaps_follow_location_activity">Follow Location Activity</string>
+    <string name="gmaps_follow_location_activity">Emergency Location</string>
     <string name="mbox_share_location_activity">Share Location Activity</string>
     <string name="mbox_follow_location_activity">Follow Location Activity</string>
     <string name="share_location">Start Sharing Your Location</string>
