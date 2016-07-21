@@ -11,14 +11,16 @@ import android.widget.Toast;
 
 import com.wellness.eva.feedback.CPRFeedback;
 import com.wellness.eva.feedback.ProcedureFeedback;
+import com.wellness.eva.messaging.GMapsFollowLocationActivity;
+import com.wellness.eva.messaging.GMapsShareLocationActivity;
 import com.wellness.eva.procedures.MedicalEmergency;
 import com.wellness.eva.procedures.MedicalProcedure;
 
 
 public class MainActivity extends Activity
 {
+    private final String channelName =  "EVA_Broadcast";
     private MedicalEmergency medicalEmergency;
-
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
     private ImageButton settingsImageButton;
@@ -44,7 +46,20 @@ public class MainActivity extends Activity
 
         // Setting settingsImageButton OnClick listener
         settingsImageButton = (ImageButton) findViewById(R.id.imageButton8);
+
+        //Check broadcasting setting
+        if(true)//change to broadcasting setting
+        {
+            //Share current location
+            GMapsShareLocationActivity shareLocationActivity = new GMapsShareLocationActivity(this);
+            shareLocationActivity.startSharingLocation();
+
+            //Follow location
+            callActivity(GMapsFollowLocationActivity.class);
+        }
     }
+
+
 
 
     /*@Override
@@ -79,6 +94,11 @@ public class MainActivity extends Activity
         // Evaluate procedure feedback if applicable
         ProcedureFeedback procedureFeedback = new CPRFeedback();
         procedureFeedback.getFeedback();
+    }
+
+    private void callActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
     }
 }
 

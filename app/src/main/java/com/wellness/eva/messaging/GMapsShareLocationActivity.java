@@ -32,14 +32,14 @@ import com.wellness.eva.R;
  * Created by sindyg on 7/15/2016.
  */
 public class GMapsShareLocationActivity implements
-        OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, LocationListener {
+        GoogleApiClient.ConnectionCallbacks, LocationListener {
 
     // =============================================================================================
     // Properties
     // =============================================================================================
     private final String channelName =  "EVA_Broadcast";
     private static final String TAG = "Tracker - GMaps Share";
-    private boolean mRequestingLocationUpdates = false;
+    private boolean mRequestingLocationUpdates = true;
     private Context context;
 
     // Google API - Locations
@@ -60,6 +60,7 @@ public class GMapsShareLocationActivity implements
     public GMapsShareLocationActivity(Context context)
     {
         this.context = context;
+
         // Start Google Client
         this.buildGoogleApiClient();
 
@@ -71,30 +72,6 @@ public class GMapsShareLocationActivity implements
         mGoogleApiClient = new GoogleApiClient.Builder(context)
                 .addConnectionCallbacks(this).addApi(LocationServices.API)
                 .build();
-    }
-
-    // =============================================================================================
-    // Map CallBacks
-    // =============================================================================================
-
-    @Override
-    public void onMapReady(GoogleMap map) {
-        mGoogleMap = map;
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        mGoogleMap.setMyLocationEnabled(true);
-        Log.d(TAG, "Map Ready");
     }
 
     // =============================================================================================
@@ -121,12 +98,13 @@ public class GMapsShareLocationActivity implements
             }
             LocationServices.FusedLocationApi.requestLocationUpdates(
                     mGoogleApiClient, mLocationRequest, this);
-            initializePolyline();
+            //initializePolyline();
         }
     }
 
     @Override
-    public void onConnectionSuspended(int cause) {
+    public void onConnectionSuspended(int cause)
+    {
         Log.d(TAG, "Connection to Google API suspended");
     }
 
@@ -138,10 +116,6 @@ public class GMapsShareLocationActivity implements
         // Broadcast information on PubNub Channel
         PubNubManager.broadcastLocation(mPubnub, channelName, location.getLatitude(),
                 location.getLongitude(), location.getAltitude());
-
-        // Update Map
-        updateCamera();
-        updatePolyline();
     }
 
     private LocationRequest createLocationRequest() {
@@ -167,26 +141,5 @@ public class GMapsShareLocationActivity implements
     protected void stopLocationUpdates() {
         LocationServices.FusedLocationApi.removeLocationUpdates(
                 mGoogleApiClient, this);
-    }
-
-    // =============================================================================================
-    // Map Editing Methods
-    // =============================================================================================
-
-    private void initializePolyline() {
-        mGoogleMap.clear();
-        mPolylineOptions = new PolylineOptions();
-        mPolylineOptions.color(Color.BLUE).width(10);
-        mGoogleMap.addPolyline(mPolylineOptions);
-    }
-
-    private void updatePolyline() {
-        mPolylineOptions.add(mLatLng);
-        mGoogleMap.clear();
-        mGoogleMap.addPolyline(mPolylineOptions);
-    }
-
-    private void updateCamera() {
-        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 16));
     }
 }

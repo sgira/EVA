@@ -55,7 +55,7 @@ public class GMapsFollowLocationActivity extends Activity implements
 
     // PubNub
     private Pubnub mPubnub;
-    private String channelName;
+    private final String channelName =  "EVA_Broadcast";
 
     // =========================================================================
     // Activity Life Cycle
@@ -66,25 +66,12 @@ public class GMapsFollowLocationActivity extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gmaps_view);
 
-        // Get Channel Name
-        Intent intent = getIntent();
-        channelName = intent.getExtras().getString("channel");
-        Log.d(TAG, "Passed Channel Name: " + channelName);
-
         // Set up View: Map & Action Bar
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        //ActionBar actionBar = getSupportActionBar();
-        //actionBar.setDisplayShowHomeEnabled(false);
-        //actionBar.setDisplayShowTitleEnabled(false);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.follow, menu);
-        mFollowButton = menu.findItem(R.id.follow_locations);
-        return true;
+
     }
 
     // =========================================================================
@@ -92,10 +79,14 @@ public class GMapsFollowLocationActivity extends Activity implements
     // =========================================================================
 
     @Override
-    public void onMapReady(GoogleMap map) {
+    public void onMapReady(GoogleMap map)
+    {
         mGoogleMap = map;
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED)
+        {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -107,32 +98,13 @@ public class GMapsFollowLocationActivity extends Activity implements
         }
         mGoogleMap.setMyLocationEnabled(true);
         Log.d(TAG, "Map Ready");
+        startFollowingLocation();
     }
 
     // =========================================================================
     // Button CallBacks
     // =========================================================================
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.follow_locations:
-                Log.d(TAG, "'Follow Friend's Location' Button Pressed");
-                mRequestingLocationUpdates = !mRequestingLocationUpdates;
-                if (mRequestingLocationUpdates) {
-                    startFollowingLocation();
-                    mFollowButton.setTitle("Stop Viewing Your Friend's Location");
-                }
-                if (!mRequestingLocationUpdates) {
-                    stopFollowingLocation();
-                    mFollowButton.setTitle("Start Viewing Your Friend's Location");
-                }
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     private void startFollowingLocation() {
         initializePolyline();
@@ -180,11 +152,11 @@ public class GMapsFollowLocationActivity extends Activity implements
     // =========================================================================
     // PubNub Callback
     // =========================================================================
-
-    Callback subscribeCallback = new Callback() {
-
+    Callback subscribeCallback = new Callback()
+    {
         @Override
-        public void successCallback(String channel, Object message) {
+        public void successCallback(String channel, Object message)
+        {
             Log.d(PUBNUB_TAG, "Message Received: " + message.toString());
             JSONObject jsonMessage = (JSONObject) message;
             try {
@@ -195,7 +167,8 @@ public class GMapsFollowLocationActivity extends Activity implements
                 Log.e(TAG, e.toString());
             }
 
-            runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable()
+            {
                 @Override
                 public void run() {
                     updatePolyline();
