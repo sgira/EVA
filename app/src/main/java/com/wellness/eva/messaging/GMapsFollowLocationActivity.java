@@ -16,6 +16,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -43,7 +45,7 @@ public class GMapsFollowLocationActivity extends Activity implements
     private static final String PUBNUB_TAG = "PUBNUB";
     private boolean isFirstMessage = true;
     private boolean mRequestingLocationUpdates = false;
-    private MenuItem mFollowButton;
+    private Button closeButton;
 
     // Google Maps
     private GoogleMap mGoogleMap;
@@ -62,9 +64,20 @@ public class GMapsFollowLocationActivity extends Activity implements
     // =========================================================================
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_gmaps_view);
+
+        //Get instance of close button
+        closeButton = (Button)findViewById(R.id.btnCloseMap);
+        closeButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Set up View: Map & Action Bar
         MapFragment mapFragment = (MapFragment) getFragmentManager()
