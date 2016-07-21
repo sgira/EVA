@@ -118,7 +118,7 @@ public class MainActivity extends Activity
             Toast.makeText(getApplicationContext(),"Enable Call 911",Toast.LENGTH_SHORT).show();
             call911Flag = true;
             mypreferences.setAutoCall911(call911Flag);
-            dialContactPhone("3056072496");
+            dialContactPhone("911");
         }
 
         if (id == R.id.menu_allowBroadcast) {

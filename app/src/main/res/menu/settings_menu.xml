@@ -11,7 +11,7 @@
         <menu>
             <item
                 android:id="@+id/menu_autoCall911"
-                android:title="Auto Call 911"/>
+                android:title="Call 911"/>
             <item
                 android:id="@+id/menu_allowBroadcast"
                 android:title="Enable Broadcasting Location"/>
