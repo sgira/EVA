@@ -24,7 +24,7 @@ public class FileRetrieval {
         MedicalProcedure medicalProcedure = new MedicalProcedure();
 
         //Retrieve medical procedure from internal file
-        if (emergencyType.equals("heartAttack")) {
+        if (emergencyType.equals("heart_attack")) {
 
             ArrayList<String> instructions = new ArrayList<>();
 
