@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+
+        android:id="@+id/action_settings"
+        android:title="Settings"
+
+        app:showAsAction="never">
+
+        <menu>
+            <item
+                android:id="@+id/menu_autoCall911"
+                android:title="Call 911"/>
+            <item
+                android:id="@+id/menu_allowBroadcast"
+                android:title="Enable Broadcasting Location"/>
+            <item
+                android:id="@+id/menu_disableBroadcast"
+                android:title="Disable Broadcasting Location"/>
+            <item
+                android:id="@+id/menu_receiveBroadcast"
+                android:title="Enable Receiving Broadcast"/>
+            <item
+                android:id="@+id/menu_disable_receiveBroadcast"
+                android:title="Disable Receiving Broadcast"/>
+            <item
+                android:id="@+id/menu_setEnglish"
+                android:title="Set English"/>
+            <item
+                android:id="@+id/menu_setSpanish"
+                android:title="Set Spanish"/>
+
+        </menu>
+
+    </item>
+</menu>

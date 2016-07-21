@@ -27,31 +27,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".messaging.GMapsShareLocationActivity"
-            android:label="@string/gmaps_share_location_activity"
-            android:theme="@style/AppTheme" />
+
         <activity
             android:name=".messaging.GMapsFollowLocationActivity"
             android:label="@string/gmaps_follow_location_activity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".messaging.MBoxShareLocationActivity"
-            android:label="@string/mbox_share_location_activity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".messaging.MBoxFollowLocationActivity"
-            android:label="@string/mbox_follow_location_activity"
-            android:theme="@style/AppTheme" />
+            android:theme="@android:style/Theme.Holo.Light.Dialog" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="YOUR API KEY" />
+            android:value="AIzaSyD2_cqWHzBwVSrXhayDDon972fAuS5Zb8k" />
 
-        <activity android:name=".Main2Activity" />
         <activity android:name=".Main3Activity" />
         <activity android:name=".Main4Activity" />
         <activity android:name=".Main5Activity" />
