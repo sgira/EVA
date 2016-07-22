@@ -99,6 +99,11 @@ public class MainActivity extends AppCompatActivity
         broadcastFlag = settings.getBoolean("broadcastingMode", true);
         mypreferences.setSendBroadcast(broadcastFlag);
 
+        for(int i = 0; i < 2; i++)
+            if(!broadcastFlag){
+                Toast.makeText(getApplicationContext(), "Attention: Broadcast Location is Disable    Change Settings to Broadcast Location", Toast.LENGTH_LONG).show();
+            }
+
         receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
         mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
 
