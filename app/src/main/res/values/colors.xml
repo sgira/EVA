@@ -5,5 +5,6 @@
     <color name="black">#000000</color>
     <color name="light_blue">#007AFF</color>
     <color name="red">#FF0000</color>
-
+    <color name="ColorPrimary">#c0392b</color>
+    <color name="ColorPrimaryDark">#E64A19</color>
 </resources>

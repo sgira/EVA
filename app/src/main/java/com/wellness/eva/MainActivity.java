@@ -3,11 +3,15 @@ package com.wellness.eva;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.wellness.eva.feedback.CPRFeedback;
 import com.wellness.eva.feedback.ProcedureFeedback;
@@ -17,18 +21,23 @@ import com.wellness.eva.procedures.MedicalEmergency;
 import com.wellness.eva.procedures.MedicalProcedure;
 
 
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
 {
     private final String channelName =  "EVA_Broadcast";
     private MedicalEmergency medicalEmergency;
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
     private ImageButton settingsImageButton;
+    private Toolbar toolbar; // Declaring the Toolbar Object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar); // Attaching the layout to the toolbar object
+        setSupportActionBar(toolbar);                   // Setting toolbar as the ActionBar with setSupportActionBar() call
+
 
         // Setting redCrossImageButton OnClick listener
         redCrossImageButton = (ImageButton) findViewById(R.id.imageButton);
