@@ -5,52 +5,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/app/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/app/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/app/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/app/.gradle/2.10/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/compiler.xml" afterPath="$PROJECT_DIR$/app/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/encodings.xml" afterPath="$PROJECT_DIR$/app/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/gradle.xml" afterPath="$PROJECT_DIR$/app/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/appcompat_v7_23_1_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/appcompat_v7_23_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_analytics_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_analytics_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_auth_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_auth_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_auth_common_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_auth_common_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_auth_module_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_auth_module_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_config_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_config_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_database_connection_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_database_connection_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/firebase_storage_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/firebase_storage_9_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/mediarouter_v7_23_0_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/mediarouter_v7_23_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_ads_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_ads_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_analytics_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_analytics_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_appinvite_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_appinvite_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_base_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_base_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_cast_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_cast_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_cast_framework_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_cast_framework_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_contextmanager_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_contextmanager_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_drive_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_drive_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_fitness_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_fitness_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_gass_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_gass_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_gcm_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_gcm_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_identity_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_identity_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_iid_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_iid_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_location_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_location_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_places_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_places_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_plus_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_plus_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_safetynet_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_safetynet_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_vision_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_vision_9_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/play_services_wearable_9_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/play_services_wearable_9_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/recyclerview_v7_23_2_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/recyclerview_v7_23_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/libraries/support_v4_23_3_0.xml" afterPath="$PROJECT_DIR$/app/.idea/libraries/support_v4_23_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/misc.xml" afterPath="$PROJECT_DIR$/app/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/modules.xml" afterPath="$PROJECT_DIR$/app/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/app/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml" />
     </list>
     <ignored path="EVA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +37,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.381531">
+            <state vertical-scroll-proportion="3.8675578">
               <caret line="170" column="76" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -88,31 +51,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#512#513#0" expanded="false" />
-                <element signature="e#546#547#0" expanded="false" />
-                <element signature="e#601#602#0" expanded="false" />
-                <element signature="e#647#648#0" expanded="false" />
-                <element signature="e#681#682#0" expanded="false" />
-                <element signature="e#711#712#0" expanded="false" />
-                <element signature="e#758#759#0" expanded="false" />
-                <element signature="e#796#797#0" expanded="false" />
-                <element signature="e#836#837#0" expanded="false" />
-                <element signature="e#872#873#0" expanded="false" />
-                <element signature="e#931#932#0" expanded="false" />
-                <element signature="e#981#982#0" expanded="false" />
-                <element signature="e#1024#1025#0" expanded="false" />
-                <element signature="e#1063#1064#0" expanded="false" />
-                <element signature="e#1218#1219#0" expanded="false" />
-                <element signature="e#1248#1249#0" expanded="false" />
-                <element signature="e#1295#1296#0" expanded="false" />
-                <element signature="e#1333#1334#0" expanded="false" />
-                <element signature="e#1362#1363#0" expanded="false" />
-                <element signature="e#1390#1391#0" expanded="false" />
-                <element signature="e#1548#1549#0" expanded="false" />
-                <element signature="e#1587#1588#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,6 +121,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
       <pane id="Scratches">
         <subPane />
       </pane>
@@ -194,9 +136,6 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane />
       </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -319,6 +258,24 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT=".idea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="EVA8">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -427,11 +384,18 @@
       <option name="number" value="Default" />
       <updated>1468520249233</updated>
     </task>
+    <task id="LOCAL-00001" summary="message8">
+      <created>1469212979555</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1469212979555</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -439,7 +403,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2490726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2490726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -451,6 +415,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -466,6 +431,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="message8" />
+    <option name="LAST_COMMIT_MESSAGE" value="message8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -486,177 +455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#512#513#0" expanded="false" />
-            <element signature="e#546#547#0" expanded="false" />
-            <element signature="e#601#602#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#796#797#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#872#873#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#981#982#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1218#1219#0" expanded="false" />
-            <element signature="e#1248#1249#0" expanded="false" />
-            <element signature="e#1295#1296#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1362#1363#0" expanded="false" />
-            <element signature="e#1390#1391#0" expanded="false" />
-            <element signature="e#1548#1549#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#512#513#0" expanded="false" />
-            <element signature="e#546#547#0" expanded="false" />
-            <element signature="e#601#602#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#796#797#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#872#873#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#981#982#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1218#1219#0" expanded="false" />
-            <element signature="e#1248#1249#0" expanded="false" />
-            <element signature="e#1295#1296#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1362#1363#0" expanded="false" />
-            <element signature="e#1390#1391#0" expanded="false" />
-            <element signature="e#1548#1549#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#512#513#0" expanded="false" />
-            <element signature="e#546#547#0" expanded="false" />
-            <element signature="e#601#602#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#796#797#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#872#873#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#981#982#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1218#1219#0" expanded="false" />
-            <element signature="e#1248#1249#0" expanded="false" />
-            <element signature="e#1295#1296#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1362#1363#0" expanded="false" />
-            <element signature="e#1390#1391#0" expanded="false" />
-            <element signature="e#1548#1549#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#512#513#0" expanded="false" />
-            <element signature="e#546#547#0" expanded="false" />
-            <element signature="e#601#602#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#711#712#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#796#797#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#872#873#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="false" />
-            <element signature="e#981#982#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1218#1219#0" expanded="false" />
-            <element signature="e#1248#1249#0" expanded="false" />
-            <element signature="e#1295#1296#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1362#1363#0" expanded="false" />
-            <element signature="e#1390#1391#0" expanded="false" />
-            <element signature="e#1548#1549#0" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +471,109 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.381531">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/validation/UserPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/settings_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <marker date="1469208937333" expanded="true" signature="316:408" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wellness/eva/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.8675578">
           <caret line="170" column="76" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
