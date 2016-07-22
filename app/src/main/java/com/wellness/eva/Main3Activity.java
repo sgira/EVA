@@ -28,7 +28,6 @@ public class Main3Activity extends Activity {
             public void onClick(View v) {
 
                 Intent closeIntent = new Intent(Main3Activity.this, MainActivity.class);
-
                 startActivity(closeIntent);
             }
         });
@@ -39,9 +38,8 @@ public class Main3Activity extends Activity {
             public void onClick(View v) {
 
                 Intent heartAttackIntent = new Intent(Main3Activity.this, Main4Activity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("emergency_situation","heart_attack");
-                startActivity(heartAttackIntent,bundle);
+                heartAttackIntent.putExtra("emergency_situation", "heart_attack");
+                startActivity(heartAttackIntent);
 
             }
         });
@@ -51,9 +49,11 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent chokingIntent = new Intent(Main3Activity.this, Main5Activity.class);
-
+                Intent chokingIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                Bundle bundle = new Bundle();
+                chokingIntent.putExtra("emergency_situation", "choking");
                 startActivity(chokingIntent);
+
 
             }
         });
@@ -63,9 +63,11 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent burningIntent = new Intent(Main3Activity.this, Main6Activity.class);
-
+                Intent burningIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                burningIntent.putExtra("emergency_situation", "burning");
                 startActivity(burningIntent);
+
+
 
             }
         });
@@ -75,8 +77,9 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent drowningIntent = new Intent(Main3Activity.this, Main7Activity.class);
-
+                Intent drowningIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                drowningIntent.putExtra("emergency_situation", "drowning");
+                startActivity(drowningIntent);
                 startActivity(drowningIntent);
 
             }
