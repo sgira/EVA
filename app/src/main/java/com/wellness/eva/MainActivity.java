@@ -66,6 +66,16 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        sosImageButton = (ImageButton) findViewById(R.id.imageButton2);
+        sosImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialContactPhone("911");
+            }
+        });
+
+
         //Setting location button OnClick listener
         btnLocation = (Button)findViewById(R.id.btnLocation);
         btnLocation.setOnClickListener(new Button.OnClickListener() {
@@ -86,21 +96,24 @@ public class MainActivity extends AppCompatActivity
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-        boolean broadcasting = settings.getBoolean("broadcastingMode", true);
-        mypreferences.setSendBroadcast(broadcasting);
+        broadcastFlag = settings.getBoolean("broadcastingMode", true);
+        mypreferences.setSendBroadcast(broadcastFlag);
 
-        boolean English = settings.getBoolean("EnglishMode", true);
-        mypreferences.setEnglish(English);
+        receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
+        mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
 
-        boolean Spanish = settings.getBoolean("SpanishMode", false);
-        mypreferences.setSpanish(Spanish);
+        EnglishFlag = settings.getBoolean("EnglishMode", true);
+        mypreferences.setEnglish(EnglishFlag);
+
+        SpanishFlag = settings.getBoolean("SpanishMode", false);
+        mypreferences.setSpanish(SpanishFlag);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.settings_menu, menu);
         return true;
     }
 
@@ -110,11 +123,9 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //UserPreferences mypreferences = new UserPreferences();
+
         LanguageHelper myLanguage = new LanguageHelper();
-
-
-
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -132,24 +143,36 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(),"Enable Broadcasting",Toast.LENGTH_SHORT).show();
             broadcastFlag =true;
             mypreferences.setSendBroadcast(broadcastFlag);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("broadcastingMode",broadcastFlag).commit();
         }
 
         if (id == R.id.menu_disableBroadcast) {
             Toast.makeText(getApplicationContext(), "Disable Broadcasting", Toast.LENGTH_SHORT).show();
             broadcastFlag = false;
             mypreferences.setSendBroadcast(broadcastFlag);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("broadcastingMode",broadcastFlag).commit();
         }
 
         if (id == R.id.menu_receiveBroadcast) {
             Toast.makeText(getApplicationContext(),"Enable Receiving Broadcast",Toast.LENGTH_SHORT).show();
             receiveBroadcastFlag = true;
             mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("receiveBroadcastingMode",receiveBroadcastFlag).commit();
         }
 
         if (id == R.id.menu_disable_receiveBroadcast) {
             Toast.makeText(getApplicationContext(),"Disable Receiving Broadcast",Toast.LENGTH_SHORT).show();
             receiveBroadcastFlag = false;
             mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("receiveBroadcastingMode",receiveBroadcastFlag).commit();
         }
 
         if (id == R.id.menu_setEnglish) {
@@ -159,6 +182,10 @@ public class MainActivity extends AppCompatActivity
             myLanguage.changeLocale(this.getResources(), "en");
             mypreferences.setEnglish(EnglishFlag);
             mypreferences.setSpanish(SpanishFlag);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
+            editor.putBoolean("receiveBroadcastingMode",SpanishFlag).commit();
         }
 
         if (id == R.id.menu_setSpanish) {
@@ -168,17 +195,11 @@ public class MainActivity extends AppCompatActivity
             myLanguage.changeLocale(this.getResources(), "es");
             mypreferences.setSpanish(SpanishFlag);
             mypreferences.setEnglish(EnglishFlag);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("receiveBroadcastingMode",SpanishFlag).commit();
+            editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
         }
-
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean("broadcastingMode", mypreferences.isReceiveBroadcast());
-        editor.putBoolean("EnglishMode", mypreferences.isEnglish());
-        editor.putBoolean("SpanishMode",mypreferences.isSpanish());
-
-        // Commit the edits!
-        editor.commit();
-
 
         return super.onOptionsItemSelected(item);
     }
