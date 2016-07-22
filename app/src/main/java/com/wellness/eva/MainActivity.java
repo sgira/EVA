@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
@@ -30,34 +31,30 @@ public class MainActivity extends AppCompatActivity
     private MedicalEmergency medicalEmergency;
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
-    private ImageButton settingsImageButton;
     private Toolbar toolbar; // Declaring the Toolbar Object
-    boolean call911Flag;
-    boolean broadcastFlag;
-    boolean receiveBroadcastFlag;
-    boolean EnglishFlag;
-    boolean SpanishFlag;
+    private boolean call911Flag;
+    private boolean broadcastFlag;
+    private boolean receiveBroadcastFlag;
+    private boolean EnglishFlag;
+    private boolean SpanishFlag;
+    private Button btnLocation;
+    private UserPreferences mypreferences = new UserPreferences();
 
     public static final String PREFS_NAME = "MyPrefsFile";
-
-
-
-    UserPreferences mypreferences = new UserPreferences();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar); // Attaching the layout to the toolbar object
-        setSupportActionBar(toolbar);                   // Setting toolbar as the ActionBar with setSupportActionBar() call
+        // Attaching the layout to the toolbar object
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        // Setting toolbar as the ActionBar with setSupportActionBar() call
+        setSupportActionBar(toolbar);
 
         // Setting redCrossImageButton OnClick listener
         redCrossImageButton = (ImageButton) findViewById(R.id.imageButton);
-
         redCrossImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,21 +66,22 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //Setting location button OnClick listener
+        btnLocation = (Button)findViewById(R.id.btnLocation);
+        btnLocation.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Follow location
+                callActivity(GMapsFollowLocationActivity.class);
+            }
+        });
 
-
-
-        // Setting settingsImageButton OnClick listener
-        settingsImageButton = (ImageButton) findViewById(R.id.imageButton8);
-
-        //Check broadcasting setting
+        //Checking broadcasting setting
         if(true)//change to broadcasting setting
         {
             //Share current location
             GMapsShareLocationActivity shareLocationActivity = new GMapsShareLocationActivity(this);
             shareLocationActivity.startSharingLocation();
-
-            //Follow location
-            callActivity(GMapsFollowLocationActivity.class);
         }
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
