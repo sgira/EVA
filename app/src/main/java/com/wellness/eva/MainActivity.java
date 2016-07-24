@@ -32,12 +32,15 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
 {
+    private final String channelName =  "EVA_Broadcast";
+    private MedicalEmergency medicalEmergency;
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
     private Toolbar toolbar; // Declaring the Toolbar Object
     private boolean call911Flag;
     private boolean broadcastFlag;
     private boolean receiveBroadcastFlag;
+    private Button btnLocation;
     private boolean EnglishFlag;
     private boolean SpanishFlag;
     private Button btnEmergencyLocation;
@@ -118,35 +121,6 @@ public class MainActivity extends AppCompatActivity
 
         receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
         mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
-
-        EnglishFlag = settings.getBoolean("EnglishMode", true);
-        mypreferences.setEnglish(EnglishFlag);
-
-        SpanishFlag = settings.getBoolean("SpanishMode", false);
-        mypreferences.setSpanish(SpanishFlag);
-
-        //Checking broadcasting setting
-        SetBroadcastOnOff(mypreferences.isSendBroadcast());
-
-    }
-
-    private void SetBroadcastOnOff(boolean on)
-    {
-        //Broadcast feature is on
-        if(on)
-        {
-            //Share current location
-            GMapsShareLocationActivity shareLocationActivity = new GMapsShareLocationActivity(this);
-            shareLocationActivity.startSharingLocation();
-
-            //Show change to user
-            btnBroadcasting.setBackground(getDrawable(R.drawable.ic_location_on_white_18dp));
-        }
-        else
-        {
-            //Show change to user
-            btnBroadcasting.setBackground(getDrawable(R.drawable.ic_location_off_white_18dp));
-        }
     }
 
     @Override
@@ -185,8 +159,6 @@ public class MainActivity extends AppCompatActivity
 
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("broadcastingMode",broadcastFlag).commit();
-
-
         }
 
         if (id == R.id.menu_disableBroadcast) {
@@ -215,35 +187,6 @@ public class MainActivity extends AppCompatActivity
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("receiveBroadcastingMode",receiveBroadcastFlag).commit();
         }
-
-        if (id == R.id.menu_setEnglish) {
-            Toast.makeText(getApplicationContext(),"Set English",Toast.LENGTH_SHORT).show();
-            EnglishFlag = true;
-            SpanishFlag = false;
-            myLanguage.changeLocale(this.getResources(), "en");
-            mypreferences.setEnglish(EnglishFlag);
-            mypreferences.setSpanish(SpanishFlag);
-
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
-            editor.putBoolean("receiveBroadcastingMode",SpanishFlag).commit();
-        }
-
-        if (id == R.id.menu_setSpanish) {
-            Toast.makeText(getApplicationContext(),"Set Spanish",Toast.LENGTH_SHORT).show();
-            SpanishFlag = true;
-            EnglishFlag = false;
-            myLanguage.changeLocale(this.getResources(), "es");
-            mypreferences.setSpanish(SpanishFlag);
-            mypreferences.setEnglish(EnglishFlag);
-
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean("receiveBroadcastingMode",SpanishFlag).commit();
-            editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
-        }
-
-        //Alert user of setting change for security purposes
-        AlertSettingChanged();
 
         return super.onOptionsItemSelected(item);
     }

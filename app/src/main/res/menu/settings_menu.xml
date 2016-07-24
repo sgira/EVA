@@ -25,12 +25,7 @@
             <item
                 android:id="@+id/menu_disable_receiveBroadcast"
                 android:title="Disable Receiving Broadcast"/>
-            <item
-                android:id="@+id/menu_setEnglish"
-                android:title="Set English"/>
-            <item
-                android:id="@+id/menu_setSpanish"
-                android:title="Set Spanish"/>
+
 
         </menu>
 
