@@ -1,6 +1,7 @@
 package com.wellness.eva;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity
     private MedicalEmergency medicalEmergency;
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
-    private Toolbar toolbar; // Declaring the Toolbar Object
+    private Toolbar toolbar;
     private boolean call911Flag;
     private boolean broadcastFlag;
     private boolean receiveBroadcastFlag;
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity
     private ImageView imgAlert;
     private String alertDate = "";
     private UserPreferences mypreferences = new UserPreferences();
-
+    private SharedPreferences sharedPref = getSharedPreferences(
+            getString(R.string.preference_internal_file_key), Context.MODE_PRIVATE);
     public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
@@ -107,6 +109,9 @@ public class MainActivity extends AppCompatActivity
                 callActivity(GMapsFollowLocationActivity.class);
             }
         });
+
+        //Acquire last changed setting date
+        GetLastSettingDate();
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
@@ -188,6 +193,8 @@ public class MainActivity extends AppCompatActivity
             editor.putBoolean("receiveBroadcastingMode",receiveBroadcastFlag).commit();
         }
 
+        //Inform user of change setting
+        AlertSettingChanged();
         return super.onOptionsItemSelected(item);
     }
 
@@ -195,7 +202,23 @@ public class MainActivity extends AppCompatActivity
     {
         Date d = new Date();
         alertDate = DateFormat.format("EEEE, MMMM d, yyyy ", d.getTime()).toString();
+        SaveLastSettingDate();
+
         imgAlert.setVisibility(View.VISIBLE);
+    }
+
+    private void SaveLastSettingDate()
+    {
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("settings_date", alertDate);
+        editor.commit();
+    }
+
+    private void GetLastSettingDate()
+    {
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        alertDate = sharedPref.getString("settings_date", "");
     }
 
 //    private void ShowEmergencyProcedure(String emergencyName)

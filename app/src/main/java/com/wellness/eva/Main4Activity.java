@@ -11,6 +11,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.wellness.eva.feedback.CPRFeedback;
 import com.wellness.eva.procedures.MedicalProcedure;
 
 import java.util.ArrayList;
@@ -292,7 +293,11 @@ public class Main4Activity extends Activity implements OnClickListener {
 
     }
 
-
+    //to initiate cpr
+    public void beginCPR_procedures(View view){
+        Intent intent = new Intent(this, CPRFeedback.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onClick(View v) {

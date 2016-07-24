@@ -225,6 +225,7 @@
             android:background="#538ffb"
             android:textSize="40dp"
             android:layout_marginLeft="20dp"
+            android:onClick="beginCPR_procedures"
             android:textColor="#ffffff"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />

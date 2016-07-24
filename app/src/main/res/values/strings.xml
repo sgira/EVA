@@ -8,7 +8,6 @@
     <string name="share_button">Share Location</string>
     <string name="follow_button">View Friend\'s Location</string>
     <string name="gmaps">Google Maps</string>
-    <string name="mapbox">MapBox</string>
     <string name="channel_hint">Please enter a channel</string>
     <string name="gmaps_share_location_activity">Share Location Activity</string>
     <string name="gmaps_follow_location_activity">Emergency Location</string>
@@ -16,4 +15,5 @@
     <string name="mbox_follow_location_activity">Follow Location Activity</string>
     <string name="share_location">Start Sharing Your Location</string>
     <string name="follow_location">Start Viewing Your Friend\'s Location</string>
+    <string name="preference_internal_file_key">internal_preferences</string>
 </resources>
