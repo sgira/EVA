@@ -1,4 +1,4 @@
-package com.wellness.eva;
+package com.wellness.eva.procedures;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,12 +11,14 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.wellness.eva.FileRetrieval;
+import com.wellness.eva.R;
 import com.wellness.eva.feedback.CPRFeedback;
 import com.wellness.eva.procedures.MedicalProcedure;
 
 import java.util.ArrayList;
 
-public class Main4Activity extends Activity implements OnClickListener {
+public class MedicalProceduresView extends Activity implements OnClickListener {
 
     private String emergencyType;
     private ViewFlipper heartAttack_viewFlipper;

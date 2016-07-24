@@ -1,4 +1,4 @@
-package com.wellness.eva;
+package com.wellness.eva.procedures;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.wellness.eva.procedures.MedicalProcedureView;
+import com.wellness.eva.MainActivity;
+import com.wellness.eva.R;
 
-public class Main3Activity extends Activity {
+public class MedicalProcedures extends Activity {
 
     public ImageButton closeImageButton;
     public ImageButton heartAttackImageButton;
@@ -27,7 +28,7 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent closeIntent = new Intent(Main3Activity.this, MainActivity.class);
+                Intent closeIntent = new Intent(MedicalProcedures.this, MainActivity.class);
                 startActivity(closeIntent);
             }
         });
@@ -37,7 +38,7 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent heartAttackIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent heartAttackIntent = new Intent(MedicalProcedures.this, MedicalProceduresView.class);
                 heartAttackIntent.putExtra("emergency_situation", "heart_attack");
                 startActivity(heartAttackIntent);
 
@@ -49,7 +50,7 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent chokingIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent chokingIntent = new Intent(MedicalProcedures.this, MedicalProceduresView.class);
                 chokingIntent.putExtra("emergency_situation", "choking");
                 startActivity(chokingIntent);
 
@@ -62,7 +63,7 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent burningIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent burningIntent = new Intent(MedicalProcedures.this, MedicalProceduresView.class);
                 burningIntent.putExtra("emergency_situation", "burning");
                 startActivity(burningIntent);
 
@@ -76,7 +77,7 @@ public class Main3Activity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent drowningIntent = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent drowningIntent = new Intent(MedicalProcedures.this, MedicalProceduresView.class);
                 drowningIntent.putExtra("emergency_situation", "drowning");
                 startActivity(drowningIntent);
 

@@ -41,8 +41,8 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyD2_cqWHzBwVSrXhayDDon972fAuS5Zb8k" />
 
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".Main4Activity" />
+        <activity android:name=".procedures.MedicalProcedures" />
+        <activity android:name=".procedures.MedicalProceduresView" />
 
         <activity android:name=".feedback.CPRFeedback"
             android:hardwareAccelerated="false"></activity>

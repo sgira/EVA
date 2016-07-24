@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import com.wellness.eva.messaging.BroadcastEmergency;
 import com.wellness.eva.messaging.BroadcastReceiver;
 import com.wellness.eva.procedures.MedicalEmergency;
+import com.wellness.eva.procedures.MedicalProcedures;
 import com.wellness.eva.validation.SettingsSecurity;
 import com.wellness.eva.validation.UserPreferences;
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Intent intentVar = new Intent(MainActivity.this, Main3Activity.class);
+                Intent intentVar = new Intent(MainActivity.this, MedicalProcedures.class);
 
                 startActivity(intentVar);
             }
