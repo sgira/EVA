@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
+        InitiateLogic();
+        InitiateControls();
+
+    }
+
+    private void InitiateControls()
+    {
         // Attaching the layout to the toolbar object
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -83,14 +90,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
         //Setting emergency location button OnClick listener
         btnEmergencyLocation = (Button)findViewById(R.id.btnEmergencyLocation);
         btnEmergencyLocation.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //Follow location
-                    callActivity(GMapsFollowLocationActivity.class);
+                //Follow location
+                callActivity(GMapsFollowLocationActivity.class);
             }
         });
 
@@ -104,9 +110,6 @@ public class MainActivity extends AppCompatActivity
                 callActivity(GMapsFollowLocationActivity.class);
             }
         });
-
-        //Acquire last changed setting date
-        GetLastSettingDate();
 
         pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
 
@@ -123,6 +126,13 @@ public class MainActivity extends AppCompatActivity
 
         receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
         mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
+    }
+
+    private void InitiateLogic()
+    {
+        //Acquire last changed setting date
+        GetLastSettingDate();
+
     }
 
     @Override
@@ -145,13 +155,6 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Toast.makeText(getApplicationContext(),"Displaying Settings",Toast.LENGTH_SHORT).show();
-        }
-
-        if (id == R.id.menu_autoCall911) {
-            Toast.makeText(getApplicationContext(),"Enabled Call 911",Toast.LENGTH_SHORT).show();
-            call911Flag = true;
-            mypreferences.setAutoCall911(call911Flag);
-            dialContactPhone("911");
         }
 
         if (id == R.id.menu_allowBroadcast) {
