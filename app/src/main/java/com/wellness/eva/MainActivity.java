@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity
     private boolean call911Flag;
     private boolean broadcastFlag;
     private boolean receiveBroadcastFlag;
-    private boolean EnglishFlag;
-    private boolean SpanishFlag;
     private Button btnLocation;
     private UserPreferences mypreferences = new UserPreferences();
 
@@ -105,13 +103,6 @@ public class MainActivity extends AppCompatActivity
 
         receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
         mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
-
-        EnglishFlag = settings.getBoolean("EnglishMode", true);
-        mypreferences.setEnglish(EnglishFlag);
-
-        SpanishFlag = settings.getBoolean("SpanishMode", false);
-        mypreferences.setSpanish(SpanishFlag);
-
     }
 
     @Override
@@ -178,33 +169,7 @@ public class MainActivity extends AppCompatActivity
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("receiveBroadcastingMode",receiveBroadcastFlag).commit();
         }
-
-        if (id == R.id.menu_setEnglish) {
-            Toast.makeText(getApplicationContext(),"Set English",Toast.LENGTH_SHORT).show();
-            EnglishFlag = true;
-            SpanishFlag = false;
-            myLanguage.changeLocale(this.getResources(), "en");
-            mypreferences.setEnglish(EnglishFlag);
-            mypreferences.setSpanish(SpanishFlag);
-
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
-            editor.putBoolean("receiveBroadcastingMode",SpanishFlag).commit();
-        }
-
-        if (id == R.id.menu_setSpanish) {
-            Toast.makeText(getApplicationContext(),"Set Spanish",Toast.LENGTH_SHORT).show();
-            SpanishFlag = true;
-            EnglishFlag = false;
-            myLanguage.changeLocale(this.getResources(), "es");
-            mypreferences.setSpanish(SpanishFlag);
-            mypreferences.setEnglish(EnglishFlag);
-
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean("receiveBroadcastingMode",SpanishFlag).commit();
-            editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
-        }
-
+        
         return super.onOptionsItemSelected(item);
     }
 
