@@ -1,31 +1,25 @@
 package com.wellness.eva;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
-import com.wellness.eva.feedback.CPRFeedback;
-import com.wellness.eva.feedback.ProcedureFeedback;
 import com.wellness.eva.messaging.GMapsFollowLocationActivity;
-import com.wellness.eva.messaging.GMapsShareLocationActivity;
 import com.wellness.eva.procedures.MedicalEmergency;
-import com.wellness.eva.procedures.MedicalProcedure;
 import com.wellness.eva.validation.UserPreferences;
 
 import java.util.Date;
@@ -47,15 +41,16 @@ public class MainActivity extends AppCompatActivity
     private Button btnEmergencyLocation;
     private Button btnBroadcasting;
     private ImageView imgAlert;
+    private Animation pulse;
     private String alertDate = "";
     private UserPreferences mypreferences = new UserPreferences();
-    private SharedPreferences sharedPref = getSharedPreferences(
-            getString(R.string.preference_internal_file_key), Context.MODE_PRIVATE);
+    private SharedPreferences sharedPref;
     public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         // Attaching the layout to the toolbar object
@@ -84,7 +79,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                dialContactPhone("911");
+                dialContactPhone("3055425728");
             }
         });
 
@@ -113,11 +108,13 @@ public class MainActivity extends AppCompatActivity
         //Acquire last changed setting date
         GetLastSettingDate();
 
+        pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
+
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
         broadcastFlag = settings.getBoolean("broadcastingMode", true);
         mypreferences.setSendBroadcast(broadcastFlag);
-
+        sharedPref = getSharedPreferences(getString(R.string.preference_internal_file_key), Context.MODE_PRIVATE);
 
         if(!broadcastFlag)
         {
@@ -205,6 +202,7 @@ public class MainActivity extends AppCompatActivity
         SaveLastSettingDate();
 
         imgAlert.setVisibility(View.VISIBLE);
+        imgAlert.startAnimation(pulse);
     }
 
     private void SaveLastSettingDate()
