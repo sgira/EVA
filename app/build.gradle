@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.2.0-alpha4'
     }
 }
 
@@ -46,4 +46,5 @@ dependencies {
     compile 'com.pubnub:pubnub-android:3.7.10'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:appcompat-v7:23.1.0'
+    testCompile 'junit:junit:4.12'
 }

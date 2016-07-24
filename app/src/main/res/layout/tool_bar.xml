@@ -25,30 +25,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:layout_alignParentRight="true"
+            android:gravity="right">
+
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:id="@+id/imgAlert"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
             android:background="@drawable/ic_warning_white_18dp"
             />
 
         <Button
             android:layout_width="25dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_signal_wifi_4_bar_white_18dp"
             android:layout_height="25dp"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_signal_wifi_4_bar_white_18dp"
             android:id="@+id/btnBroadcasting"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+             />
 
         <Button
             android:layout_width="25dp"
-            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/ic_location_off_white_18dp"
             android:layout_height="25dp"
             android:id="@+id/btnEmergencyLocation"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+             />
+    </LinearLayout>
     </RelativeLayout>
 
 
