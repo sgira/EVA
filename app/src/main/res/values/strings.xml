@@ -16,4 +16,5 @@
     <string name="share_location">Start Sharing Your Location</string>
     <string name="follow_location">Start Viewing Your Friend\'s Location</string>
     <string name="preference_internal_file_key">internal_preferences</string>
+    <string name="security_message">security_message</string>
 </resources>

@@ -18,8 +18,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
-import com.wellness.eva.messaging.GMapsFollowLocationActivity;
+import com.wellness.eva.messaging.BroadcastEmergency;
+import com.wellness.eva.messaging.BroadcastReceiver;
 import com.wellness.eva.procedures.MedicalEmergency;
+import com.wellness.eva.validation.SettingsSecurity;
 import com.wellness.eva.validation.UserPreferences;
 
 import java.util.Date;
@@ -27,7 +29,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
 {
-    private final String channelName =  "EVA_Broadcast";
+    public static final int SECURITY_CODE = 1;
     private MedicalEmergency medicalEmergency;
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
@@ -43,8 +45,9 @@ public class MainActivity extends AppCompatActivity
     private ImageView imgAlert;
     private Animation pulse;
     private String alertDate = "";
+    private boolean securityShow;
     private UserPreferences mypreferences = new UserPreferences();
-    private SharedPreferences sharedPref;
+    private SharedPreferences internalPref;
     public static final String PREFS_NAME = "MyPrefsFile";
 
     @Override
@@ -53,8 +56,8 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
-        InitiateLogic();
         InitiateControls();
+        InitiateLogic();
 
     }
 
@@ -96,20 +99,12 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 //Follow location
-                callActivity(GMapsFollowLocationActivity.class);
+                callActivity(BroadcastReceiver.class);
             }
         });
 
-        //Setting emergency location button OnClick listener
-        btnBroadcasting = (Button)findViewById(R.id.btnEmergencyLocation);
-        btnBroadcasting.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //Follow location
-                callActivity(GMapsFollowLocationActivity.class);
-            }
-        });
+        //Setting emergency broadcasting button
+        btnBroadcasting = (Button)findViewById(R.id.btnBroadcasting);
 
         pulse = AnimationUtils.loadAnimation(this, R.anim.pulse);
 
@@ -117,22 +112,37 @@ public class MainActivity extends AppCompatActivity
 
         broadcastFlag = settings.getBoolean("broadcastingMode", true);
         mypreferences.setSendBroadcast(broadcastFlag);
-        sharedPref = getSharedPreferences(getString(R.string.preference_internal_file_key), Context.MODE_PRIVATE);
+        internalPref = getSharedPreferences(getString(R.string.preference_internal_file_key), Context.MODE_PRIVATE);
 
-        if(!broadcastFlag)
-        {
-            Toast.makeText(getApplicationContext(), "Attention: Broadcast Location is Disabled. Change Settings to Broadcast Location", Toast.LENGTH_LONG).show();
-        }
+        setBroadcastingState(broadcastFlag);
 
         receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
         mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
+
+        imgAlert.setOnClickListener(new ImageView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, SettingsSecurity.class);
+                intent.putExtra("key",alertDate);
+                startActivityForResult(intent, SECURITY_CODE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == SECURITY_CODE)
+        {
+            boolean ignoreSecurity = data.getBooleanExtra("MESSAGE", false);
+            AlertSettingChanged(!ignoreSecurity);
+        }
     }
 
     private void InitiateLogic()
     {
         //Acquire last changed setting date
         GetLastSettingDate();
-
     }
 
     @Override
@@ -164,6 +174,8 @@ public class MainActivity extends AppCompatActivity
 
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("broadcastingMode",broadcastFlag).commit();
+
+            setBroadcastingState(true);
         }
 
         if (id == R.id.menu_disableBroadcast) {
@@ -173,6 +185,8 @@ public class MainActivity extends AppCompatActivity
 
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("broadcastingMode",broadcastFlag).commit();
+
+            setBroadcastingState(false);
         }
 
         if (id == R.id.menu_receiveBroadcast) {
@@ -194,45 +208,70 @@ public class MainActivity extends AppCompatActivity
         }
 
         //Inform user of change setting
-        AlertSettingChanged();
+        AlertSettingChanged(true);
         return super.onOptionsItemSelected(item);
     }
 
-    private void AlertSettingChanged()
+    private void setBroadcastingState(boolean show)
+    {
+        if(show)
+        {
+            //Share current location
+            BroadcastEmergency shareLocationActivity = new BroadcastEmergency(this, mypreferences);
+            shareLocationActivity.startSharingLocation();
+
+            Toast.makeText(getApplicationContext(), "Attention: Broadcast Location is Enable. Your location is been shared!", Toast.LENGTH_LONG).show();
+
+            btnBroadcasting.setBackground(getDrawable(R.drawable.ic_signal_wifi_4_bar_white_18dp));
+            btnBroadcasting.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Attention: Broadcast Location is Disabled. Change Settings to Broadcast Location", Toast.LENGTH_LONG).show();
+
+            btnBroadcasting.setBackground(getDrawable(R.drawable.ic_signal_wifi_off_white_18dp));
+            btnBroadcasting.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void AlertSettingChanged(boolean show)
     {
         Date d = new Date();
         alertDate = DateFormat.format("EEEE, MMMM d, yyyy ", d.getTime()).toString();
-        SaveLastSettingDate();
+        SaveLastSettingDate(show);
 
-        imgAlert.setVisibility(View.VISIBLE);
-        imgAlert.startAnimation(pulse);
+        ShowAlert(show);
     }
 
-    private void SaveLastSettingDate()
+    private void SaveLastSettingDate(boolean show)
     {
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
+        SharedPreferences.Editor editor = internalPref.edit();
+        editor.putBoolean("settings_show", show);
         editor.putString("settings_date", alertDate);
         editor.commit();
     }
 
     private void GetLastSettingDate()
     {
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        alertDate = sharedPref.getString("settings_date", "");
+        alertDate = internalPref.getString("settings_date", "");
+        securityShow = internalPref.getBoolean("settings_show", false);
+
+        ShowAlert(securityShow);
     }
 
-//    private void ShowEmergencyProcedure(String emergencyName)
-//    {
-//        MedicalProcedure medicalProcedure = FileRetrieval.retrieveMedicalEmergency(emergencyName);
-//        medicalEmergency = new MedicalEmergency(emergencyName,medicalProcedure);
-//
-//        // Retrieve procedures for medical emergency
-//
-//        // Evaluate procedure feedback if applicable
-//        ProcedureFeedback procedureFeedback = new CPRFeedback();
-//        procedureFeedback.getFeedback();
-//    }
+    private void ShowAlert(boolean securityShow)
+    {
+        if(securityShow)
+        {
+            imgAlert.startAnimation(pulse);
+            imgAlert.setVisibility(View.VISIBLE);
+            imgAlert.setAnimation(pulse);
+        }
+        else
+        {
+            imgAlert.setVisibility(View.INVISIBLE);
+        }
+    }
 
     public void dialContactPhone(final String phoneNumber) {
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" +  phoneNumber));

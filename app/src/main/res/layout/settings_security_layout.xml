@@ -6,11 +6,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:id="@+id/txtSecurityMsg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CLOSE"
+            android:id="@+id/btnCloseSecurity"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCloseSecurity"/>
+        android:layout_weight="1"
+        android:text="IGNORE"
+        android:id="@+id/btnIgnore"/>
+    </LinearLayout>
 
 </LinearLayout>

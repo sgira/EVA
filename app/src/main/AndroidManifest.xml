@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".messaging.GMapsFollowLocationActivity"
+            android:name=".messaging.BroadcastReceiver"
             android:label="@string/gmaps_follow_location_activity"
             android:theme="@android:style/Theme.Holo.Light.Dialog" />
 
@@ -46,6 +46,9 @@
 
         <activity android:name=".feedback.CPRFeedback"
             android:hardwareAccelerated="false"></activity>
+
+        <activity android:name=".validation.SettingsSecurity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"></activity>
 
     </application>
 
