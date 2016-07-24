@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity
                 Intent intentVar = new Intent(MainActivity.this, Main3Activity.class);
 
                 startActivity(intentVar);
-                //Toast.makeText(MainActivity.this, "it works", Toast.LENGTH_LONG).show();
             }
         });
 

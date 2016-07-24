@@ -3,6 +3,7 @@ package com.wellness.eva;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,13 +18,13 @@ import java.util.ArrayList;
 public class Main4Activity extends Activity implements OnClickListener {
 
     private String emergencyType;
-    private boolean needsFeedback;
     private ViewFlipper heartAttack_viewFlipper;
     private ViewFlipper choking_viewFlipper;
     private ViewFlipper drowning_viewFlipper;
     private ViewFlipper burning_tab1_viewFlipper;
     private ViewFlipper burning_tab2_viewFlipper;
     private ViewFlipper burning_tab3_viewFlipper;
+    private TabHost host;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,6 @@ public class Main4Activity extends Activity implements OnClickListener {
 
         Bundle bundle = getIntent().getExtras();
         emergencyType = bundle.getString("emergency_situation");
-        //needsFeedback = intent.getExtras().getBoolean("needs_feedback");
 
         FileRetrieval file = new FileRetrieval();
         MedicalProcedure procedure = new MedicalProcedure();
@@ -62,8 +62,10 @@ public class Main4Activity extends Activity implements OnClickListener {
             View b = findViewById(R.id.button);
             b.setVisibility(View.GONE);
 
-            TabHost host = (TabHost) findViewById(R.id.tabHost2);
+
+            host = (TabHost) findViewById(R.id.tabHost2);
             host.setup();
+
 
             //Tab 1
             TabHost.TabSpec spec = host.newTabSpec("First  degree burns");
@@ -82,6 +84,7 @@ public class Main4Activity extends Activity implements OnClickListener {
             spec.setContent(R.id.linearLayout3);
             spec.setIndicator("Third degree burns");
             host.addTab(spec);
+
 
             TextView myTextView37 = new TextView(this);
             myTextView37 = (TextView) findViewById(R.id.textView37);
@@ -167,6 +170,7 @@ public class Main4Activity extends Activity implements OnClickListener {
             }
 
         } else if(emergencyType.equals("heart_attack")) {
+
 
             TextView myTextView8 = new TextView(this);
             myTextView8 = (TextView) findViewById(R.id.textView8);
@@ -296,8 +300,24 @@ public class Main4Activity extends Activity implements OnClickListener {
         heartAttack_viewFlipper.showNext();
         choking_viewFlipper.showNext();
         drowning_viewFlipper.showNext();
-        burning_tab1_viewFlipper.showNext();
-        burning_tab2_viewFlipper.showNext();
-        burning_tab3_viewFlipper.showNext();
+
+        if (emergencyType.equals("burning")) {
+
+            ArrayList <ViewFlipper> v_array = new ArrayList<>();
+            v_array.add(burning_tab1_viewFlipper);
+            v_array.add(burning_tab2_viewFlipper);
+            v_array.add(burning_tab3_viewFlipper);
+
+            for (int i = 0; i < host.getTabWidget().getChildCount(); i++) {
+
+                if (host.getTabWidget().getChildAt(i).isSelected()) {
+
+                    v_array.get(i).showNext();
+                }
+            }
+
+        }
+
     }
+
 }

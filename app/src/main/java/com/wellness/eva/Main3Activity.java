@@ -50,7 +50,6 @@ public class Main3Activity extends Activity {
             public void onClick(View v) {
 
                 Intent chokingIntent = new Intent(Main3Activity.this, Main4Activity.class);
-                Bundle bundle = new Bundle();
                 chokingIntent.putExtra("emergency_situation", "choking");
                 startActivity(chokingIntent);
 
@@ -79,7 +78,6 @@ public class Main3Activity extends Activity {
 
                 Intent drowningIntent = new Intent(Main3Activity.this, Main4Activity.class);
                 drowningIntent.putExtra("emergency_situation", "drowning");
-                startActivity(drowningIntent);
                 startActivity(drowningIntent);
 
             }
