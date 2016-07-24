@@ -3,16 +3,19 @@ package com.wellness.eva;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
@@ -24,11 +27,11 @@ import com.wellness.eva.procedures.MedicalEmergency;
 import com.wellness.eva.procedures.MedicalProcedure;
 import com.wellness.eva.validation.UserPreferences;
 
+import java.util.Date;
+
 
 public class MainActivity extends AppCompatActivity
 {
-    private final String channelName =  "EVA_Broadcast";
-    private MedicalEmergency medicalEmergency;
     private ImageButton redCrossImageButton;
     private ImageButton sosImageButton;
     private Toolbar toolbar; // Declaring the Toolbar Object
@@ -37,7 +40,10 @@ public class MainActivity extends AppCompatActivity
     private boolean receiveBroadcastFlag;
     private boolean EnglishFlag;
     private boolean SpanishFlag;
-    private Button btnLocation;
+    private Button btnEmergencyLocation;
+    private Button btnBroadcasting;
+    private ImageView imgAlert;
+    private String alertDate = "";
     private UserPreferences mypreferences = new UserPreferences();
 
     public static final String PREFS_NAME = "MyPrefsFile";
@@ -49,6 +55,9 @@ public class MainActivity extends AppCompatActivity
 
         // Attaching the layout to the toolbar object
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        //Initiate alert icon
+        imgAlert = (ImageView)findViewById(R.id.imgAlert);
 
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
@@ -75,33 +84,37 @@ public class MainActivity extends AppCompatActivity
         });
 
 
-        //Setting location button OnClick listener
-        btnLocation = (Button)findViewById(R.id.btnLocation);
-        btnLocation.setOnClickListener(new Button.OnClickListener() {
+        //Setting emergency location button OnClick listener
+        btnEmergencyLocation = (Button)findViewById(R.id.btnEmergencyLocation);
+        btnEmergencyLocation.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                    //Follow location
+                    callActivity(GMapsFollowLocationActivity.class);
+            }
+        });
+
+        //Setting emergency location button OnClick listener
+        btnBroadcasting = (Button)findViewById(R.id.btnEmergencyLocation);
+        btnBroadcasting.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 //Follow location
                 callActivity(GMapsFollowLocationActivity.class);
             }
         });
-
-        //Checking broadcasting setting
-        if(true)//change to broadcasting setting
-        {
-            //Share current location
-            GMapsShareLocationActivity shareLocationActivity = new GMapsShareLocationActivity(this);
-            shareLocationActivity.startSharingLocation();
-        }
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
         broadcastFlag = settings.getBoolean("broadcastingMode", true);
         mypreferences.setSendBroadcast(broadcastFlag);
 
-        for(int i = 0; i < 2; i++)
-            if(!broadcastFlag){
-                Toast.makeText(getApplicationContext(), "Attention: Broadcast Location is Disable    Change Settings to Broadcast Location", Toast.LENGTH_LONG).show();
-            }
+
+        if(!broadcastFlag)
+        {
+            Toast.makeText(getApplicationContext(), "Attention: Broadcast Location is Disabled. Change Settings to Broadcast Location", Toast.LENGTH_LONG).show();
+        }
 
         receiveBroadcastFlag = settings.getBoolean("receiveBroadcastingMode", true);
         mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
@@ -112,6 +125,28 @@ public class MainActivity extends AppCompatActivity
         SpanishFlag = settings.getBoolean("SpanishMode", false);
         mypreferences.setSpanish(SpanishFlag);
 
+        //Checking broadcasting setting
+        SetBroadcastOnOff(mypreferences.isSendBroadcast());
+
+    }
+
+    private void SetBroadcastOnOff(boolean on)
+    {
+        //Broadcast feature is on
+        if(on)
+        {
+            //Share current location
+            GMapsShareLocationActivity shareLocationActivity = new GMapsShareLocationActivity(this);
+            shareLocationActivity.startSharingLocation();
+
+            //Show change to user
+            btnBroadcasting.setBackground(getDrawable(R.drawable.ic_location_on_white_18dp));
+        }
+        else
+        {
+            //Show change to user
+            btnBroadcasting.setBackground(getDrawable(R.drawable.ic_location_off_white_18dp));
+        }
     }
 
     @Override
@@ -137,7 +172,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if (id == R.id.menu_autoCall911) {
-            Toast.makeText(getApplicationContext(),"Enable Call 911",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Enabled Call 911",Toast.LENGTH_SHORT).show();
             call911Flag = true;
             mypreferences.setAutoCall911(call911Flag);
             dialContactPhone("911");
@@ -150,6 +185,8 @@ public class MainActivity extends AppCompatActivity
 
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean("broadcastingMode",broadcastFlag).commit();
+
+
         }
 
         if (id == R.id.menu_disableBroadcast) {
@@ -171,7 +208,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         if (id == R.id.menu_disable_receiveBroadcast) {
-            Toast.makeText(getApplicationContext(),"Disable Receiving Broadcast",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Disabled Receiving Broadcast",Toast.LENGTH_SHORT).show();
             receiveBroadcastFlag = false;
             mypreferences.setReceiveBroadcast(receiveBroadcastFlag);
 
@@ -205,20 +242,30 @@ public class MainActivity extends AppCompatActivity
             editor.putBoolean("receiveBroadcastingMode",EnglishFlag).commit();
         }
 
+        //Alert user of setting change for security purposes
+        AlertSettingChanged();
+
         return super.onOptionsItemSelected(item);
     }
 
-    private void ShowEmergencyProcedure(String emergencyName)
+    private void AlertSettingChanged()
     {
-        MedicalProcedure medicalProcedure = FileRetrieval.retrieveMedicalEmergency(emergencyName);
-        medicalEmergency = new MedicalEmergency(emergencyName,medicalProcedure);
-
-        // Retrieve procedures for medical emergency
-
-        // Evaluate procedure feedback if applicable
-        ProcedureFeedback procedureFeedback = new CPRFeedback();
-        procedureFeedback.getFeedback();
+        Date d = new Date();
+        alertDate = DateFormat.format("EEEE, MMMM d, yyyy ", d.getTime()).toString();
+        imgAlert.setVisibility(View.VISIBLE);
     }
+
+//    private void ShowEmergencyProcedure(String emergencyName)
+//    {
+//        MedicalProcedure medicalProcedure = FileRetrieval.retrieveMedicalEmergency(emergencyName);
+//        medicalEmergency = new MedicalEmergency(emergencyName,medicalProcedure);
+//
+//        // Retrieve procedures for medical emergency
+//
+//        // Evaluate procedure feedback if applicable
+//        ProcedureFeedback procedureFeedback = new CPRFeedback();
+//        procedureFeedback.getFeedback();
+//    }
 
     public void dialContactPhone(final String phoneNumber) {
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" +  phoneNumber));

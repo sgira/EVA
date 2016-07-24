@@ -25,12 +25,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imgAlert"
+            android:background="@drawable/ic_warning_white_18dp"
+            />
+
+        <Button
+            android:layout_width="25dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_signal_wifi_4_bar_white_18dp"
+            android:layout_height="25dp"
+            android:id="@+id/btnBroadcasting"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
         <Button
             android:layout_width="25dp"
             android:layout_margin="10dp"
             android:background="@drawable/ic_location_off_white_18dp"
             android:layout_height="25dp"
-            android:id="@+id/btnLocation"
+            android:id="@+id/btnEmergencyLocation"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
