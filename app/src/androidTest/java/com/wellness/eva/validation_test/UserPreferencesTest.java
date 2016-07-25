@@ -1,15 +1,35 @@
-package com.wellness.eva.validation;
+package com.wellness.eva.validation_test;
+
+import android.test.suitebuilder.annotation.SmallTest;
+
+import com.wellness.eva.validation.SettingsSecurity;
 
 import junit.framework.TestCase;
 
 /**
  * Created by SinJa on 7/24/16.
  */
-public class UserPreferencesTest extends TestCase {
+public class UserPreferencesTest extends TestCase
+{
+    private SettingsSecurity settingsSecurity;
 
     public void setUp() throws Exception {
         super.setUp();
+        settingsSecurity = new SettingsSecurity();
+    }
 
+    @SmallTest
+    public void testUpdateFunction() {
+//        UserPreferences subj = new UserPreferences();
+//        PreferencesObserver mockedObserver = EasyMock.createMock(PreferencesObserver.class);
+//
+//        mockedObserver.update(equals(subj), EasyMock.anyObject());
+//        EasyMock.replay(mockedObserver);
+//
+//
+//        subj.isSendBroadcast();
+//
+//        EasyMock.verify(mockedObserver);
     }
 
     public void testIsAutoCall911() throws Exception {

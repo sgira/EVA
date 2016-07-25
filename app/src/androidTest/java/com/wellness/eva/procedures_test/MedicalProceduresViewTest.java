@@ -1,4 +1,4 @@
-package com.wellness.eva.procedures;
+package com.wellness.eva.procedures_test;
 
 import junit.framework.TestCase;
 
