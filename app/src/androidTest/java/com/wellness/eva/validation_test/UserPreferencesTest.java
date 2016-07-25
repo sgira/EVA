@@ -1,16 +1,30 @@
 package com.wellness.eva.validation_test;
 
+import android.content.Context;
 import android.test.suitebuilder.annotation.SmallTest;
 
 import com.wellness.eva.validation.SettingsSecurity;
 
 import junit.framework.TestCase;
 
+import org.junit.Before;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
 /**
  * Created by SinJa on 7/24/16.
  */
 public class UserPreferencesTest extends TestCase
 {
+    @Mock
+    Context context;
+
+    @Before
+    public void init()
+    {
+        MockitoAnnotations.initMocks(this);
+    }
+
     private SettingsSecurity settingsSecurity;
 
     public void setUp() throws Exception {

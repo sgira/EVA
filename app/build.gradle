@@ -63,4 +63,5 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.easymock/easymock
     androidTestCompile group: 'org.easymock', name: 'easymock', version: '2.5'
+    compile 'com.android.support.test.espresso:espresso-core:2.2'
 }
