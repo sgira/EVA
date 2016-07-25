@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="easymock-2.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.easymock/easymock/2.5/e410497849f00e6fab5c42d666612d3fe6d1dec2/easymock-2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.easymock/easymock/2.5/178a6cac5a75c514c3569ebe0fb0799012cdb2b5/easymock-2.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
