@@ -27,11 +27,13 @@ public class SettingsSecurity extends Activity
         setContentView(R.layout.settings_security_layout);
 
         //Get information passed from main
-        Bundle extras = getIntent().getExtras();
+        Intent extras = getIntent();
 
-        String msg = "Last time a setting was changed: ";
-        if (extras != null) {
-            msg += extras.getString("date");
+        String msg = "A setting was changed in EVA!";
+
+        if (extras != null)
+        {
+            msg = "Last time a setting was changed: " + extras.getStringExtra("date");
         }
 
         txtSecurityMsg = (TextView)findViewById(R.id.txtSecurityMsg);

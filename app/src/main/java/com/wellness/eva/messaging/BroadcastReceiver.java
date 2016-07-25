@@ -6,18 +6,12 @@ package com.wellness.eva.messaging;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -174,7 +168,7 @@ public class BroadcastReceiver extends Activity implements
                 double mLat = jsonMessage.getDouble("lat");
                 double mLng = jsonMessage.getDouble("lng");
                 mLatLng = new LatLng(mLat, mLng);
-                inBoundary = CompareLocation(mLat, mLng);
+                //inBoundary = CompareLocation(mLat, mLng);
             } catch (JSONException e) {
                 Log.e(TAG, e.toString());
             }
@@ -185,15 +179,16 @@ public class BroadcastReceiver extends Activity implements
                 public void run() {
 
                     //Receive broadcasting location of people within the same vicinity
-                    if(inBoundary) {
+                    //if(inBoundary) {
                         updatePolyline();
                         updateCamera();
                         updateMarker();
-                    }
+                    //}
                 }
             });
         }
     };
+
 
     private boolean CompareLocation(double lat, double lng)
     {

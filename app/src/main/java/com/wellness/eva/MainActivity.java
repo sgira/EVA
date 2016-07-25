@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                dialContactPhone("3055425728");
+                dialContactPhone("123");
             }
         });
 
@@ -270,7 +270,10 @@ public class MainActivity extends AppCompatActivity
         }
         else
         {
+            imgAlert.clearAnimation();
             imgAlert.setVisibility(View.INVISIBLE);
+            imgAlert.invalidate();
+            imgAlert.requestLayout();
         }
     }
 
